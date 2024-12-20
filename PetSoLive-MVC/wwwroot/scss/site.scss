@@ -1,0 +1,265 @@
+﻿$dark-blue: #213159;
+$med-blue: #3d6098;
+$med-red: #f04b4c;
+$lt-gray: #e7e7e7;
+$deep-gray: #777;
+
+html {
+    display: flex;
+    min-height: 100vh;
+}
+
+body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    font-family: "Roboto", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+a:hover, a:focus, a:active {
+    text-decoration: none;
+}
+
+/*Navbar*/
+.navbar {
+    margin-bottom: 0px;
+}
+
+a.navbar-brand {
+    font-family: 'Montserrat Subrayada', sans-serif;
+    color: $deep-gray;
+    padding: 15px;
+    font-size: 40px;
+
+    &:hover {
+        color: $med-blue !important;
+    }
+}
+
+.navbar-btn:hover {
+    background-color: $med-blue;
+    color: white;
+}
+
+
+/*Add Pet Page*/
+#breed-form-div {
+    display: none;
+}
+
+i.add-breed {
+    margin-left: 10px;
+
+    &:hover {
+        color: $med-red;
+    }
+}
+
+.modal-header .close {
+    margin-top: -23px;
+}
+
+#modal-help-block {
+    display: none;
+}
+
+/*Radio Buttons adapted from http://codepen.io/JiveDig/pen/jbdJXR*/
+.switch-title {
+    margin-bottom: 6px;
+}
+
+.switch-field {
+    overflow: hidden;
+
+    input {
+        position: absolute !important;
+        clip: rect(0, 0, 0, 0);
+        height: 1px;
+        width: 1px;
+        border: 0;
+        overflow: hidden;
+    }
+
+    label {
+        float: left;
+    }
+
+    label {
+        display: inline-block;
+        background-color: #e4e4e4;
+        color: rgba(0, 0, 0, 0.6);
+        font-size: 14px;
+        font-weight: normal;
+        text-align: center;
+        text-shadow: none;
+        padding: 6px 14px;
+        border: 1px solid rgba(0, 0, 0, 0.2);
+    }
+
+    label:hover {
+        cursor: pointer;
+    }
+
+    input:checked + label {
+        background-color: #A5DC86;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    label:first-of-type {
+        border-radius: 4px 0 0 4px;
+    }
+
+    label:last-of-type {
+        border-radius: 0 4px 4px 0;
+    }
+}
+
+.container {
+    flex-grow: 1;
+}
+
+/*For Pets Index*/
+.all-pets {
+    margin: 0 auto;
+    width: 90%;
+    /*border: 2px solid red;*/
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: flex-start;
+    padding: 1%;
+}
+
+.pet-tile {
+    padding: 10px;
+    /*max-width: 23%;*/
+    /*border: 1px solid #e7e7e7;*/
+    position: relative;
+    flex: 0 0 24%;
+    margin: 1% 0;
+    flex-grow: 0;
+    box-shadow: 2px 2px 2px rgba(221, 221, 221, 0.5);
+    /*display: flex;*/
+    &:nth-child(4n-1) {
+        margin-left: 1%;
+        margin-right: 1%;
+    }
+
+    &:nth-child(3n-1) {
+        margin-left: 1%;
+    }
+
+    img {
+        max-width: 100%;
+    }
+
+    h3 {
+        text-transform: uppercase;
+        font-size: 30px;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    p:last-of-type {
+        margin-bottom: 0;
+    }
+
+    .tile-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .caption {
+        flex-grow: 2;
+        margin-bottom: 25px;
+    }
+
+    .details-button {
+        position: absolute;
+        left: 50%;
+        transform: translate(-50%, 0);
+        bottom: 5px;
+        width: 100%;
+        padding: 0 5px;
+
+        .btn-details {
+            border: 0 solid transparent;
+            background-color: #dddddd;
+            &:hover {
+                background-color: $med-blue;
+                color: white;
+            }
+        }
+    }
+}
+
+
+.add-pet-link {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+
+    a {
+        font-size: 70px;
+        padding: 0 20px;
+    }
+}
+
+/* Pet-details page*/
+
+.pet-details {
+    margin: 0 auto;
+    max-width: 80% !important;
+    margin-top: 20px;
+    font-size: 20px;
+    padding: 20px;
+
+    img {
+        max-width: 100%;
+        padding: 10px;
+        display: block;
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-transform: uppercase;
+        color: $deep-gray;
+        font-size: 40px;
+        margin-top: -5px;
+    }
+
+    span.title {
+        font-weight: 700;
+    }
+
+    .action-buttons {
+        text-align: center;
+    }
+
+    .content {
+        margin-top: 15px;
+        /*margin-left: 30px;*/
+    }
+
+    p.about {
+        margin-bottom: 0;
+    }
+}
+
+/* Edit Pet Page */
+.form-container {
+    width: 60%;
+    margin: 0 auto;
+    margin-top: 20px;
+    padding: 20px;
+
+    h1 {
+        margin-top: -5px;
+        color: $deep-gray;
+    }
+}

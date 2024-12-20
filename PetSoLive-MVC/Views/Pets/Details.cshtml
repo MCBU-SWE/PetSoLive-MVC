@@ -1,0 +1,12 @@
+@model PetSoLive_MVC.ViewModels.PetDetailsViewModel
+
+@{
+    ViewData["Title"] = "Pet Details";
+}
+<h1>@Model.Pet.Name</h1>
+
+<p><strong>Species:</strong> @Model.Pet.Species.DisplayName</p>
+<p><strong>Breed:</strong> @Model.Pet.Breed.Name</p>
+<p><strong>Added By:</strong> @Model.Pet.AddedBy</p>
+
+<a class="btn btn-secondary" href="@Url.Action("Index", "Pets")">Back to List</a>

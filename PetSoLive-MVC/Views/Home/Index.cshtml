@@ -1,8 +1,43 @@
-﻿@{
+@{
     ViewData["Title"] = "Home Page";
 }
-
+<header>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="@Url.Action("Index", "Home")">PetSoLive</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Home")">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Pets")">Pets</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Index", "Users")">Users</a>
+                </li>
+                @if (User.Identity.IsAuthenticated)
+                {
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("LogOut", "Users")">Log Out</a>
+                </li>
+                }
+                else
+                {
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Login", "Users")">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="@Url.Action("Register", "Users")">Register</a>
+                </li>
+                }
+            </ul>
+        </div>
+    </nav>
+</header>
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <p>Welcome to PetSoLive!</p>
 </div>
